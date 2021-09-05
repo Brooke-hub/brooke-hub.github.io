@@ -217,7 +217,7 @@
             
 
   
-    <article id="post-buu-re-刷题" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="buuoj-web" class="article article-type-buuoj  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
@@ -225,7 +225,7 @@
   
     <h1 itemprop="name">
 	
-	  <a class="article-title" href="/2021/06/06/buu-re-%E5%88%B7%E9%A2%98/" target="_blank">buu_re_刷题</a>
+	  <a class="article-title" href="/2021/07/20/web/" target="_blank">web</a>
   
     </h1>
   
@@ -233,8 +233,8 @@
 
   
   
-<a href="/2021/06/06/buu-re-%E5%88%B7%E9%A2%98/" class="archive-article-date">
-        <time datetime="2021-06-06T03:10:54.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-06-06</time>
+<a href="/2021/07/20/web/" class="archive-article-date">
+        <time datetime="2021-07-20T07:56:02.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-07-20</time>
 </a>
 
   
@@ -246,200 +246,14 @@
   
   <div class="article-entry" itemprop="articleBody">
     
-    <h1 id="BUUOJ-reverse"><a href="#BUUOJ-reverse" class="headerlink" title="BUUOJ reverse"></a>BUUOJ reverse</h1><p>决定开始学逆向了，啊Wendy冲鸭</p>
-<p>2021.6.6 持续更新。。。</p>
-    
-    <a class="article-more-a" href="/2021/06/06/buu-re-%E5%88%B7%E9%A2%98/#more">more >></a>
-    
-    
+    <h2 id="极客大挑战-2019-PHP"><a href="#极客大挑战-2019-PHP" class="headerlink" title="[极客大挑战 2019]PHP"></a>[极客大挑战 2019]PHP</h2><p>提示备份</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> requests</span><br><span class="line"></span><br><span class="line">url=<span class="string">&quot;http://52e48dc3-8a00-41f2-a884-3aa622f564ae.node4.buuoj.cn&quot;</span></span><br><span class="line"></span><br><span class="line">li1 = [<span class="string">&#x27;web&#x27;</span>, <span class="string">&#x27;website&#x27;</span>, <span class="string">&#x27;backup&#x27;</span>, <span class="string">&#x27;back&#x27;</span>, <span class="string">&#x27;www&#x27;</span>, <span class="string">&#x27;wwwroot&#x27;</span>, <span class="string">&#x27;temp&#x27;</span>]</span><br><span class="line">li2 = [<span class="string">&#x27;tar&#x27;</span>, <span class="string">&#x27;tar.gz&#x27;</span>, <span class="string">&#x27;zip&#x27;</span>, <span class="string">&#x27;rar&#x27;</span>]</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> li1:</span><br><span class="line">    <span class="keyword">for</span> j <span class="keyword">in</span> li2:</span><br><span class="line">        url_final=url+<span class="string">&quot;/&quot;</span>+i+<span class="string">&quot;.&quot;</span>+j</span><br><span class="line">        print(url_final)</span><br><span class="line">        r=requests.get(url_final)</span><br><span class="line">        print(r)</span><br><span class="line"></span><br></pre></td></tr></table></figure>
 
-    
+<p><img src="/2021/07/20/web/image-20210720155715016.png" alt="image-20210720155715016"></p>
+<p>代码审计</p>
+<p>从get获取数值，反序列化后</p>
+<p><img src="/2021/07/20/web/image-20210720161542693.png" alt="image-20210720161542693"></p>
 
-    
-
-  </div>
-  <div class="article-info article-info-index">
-    
-    <div class="article-pop-out tagcloud">
-      <i class="icon-tuding"></i>
-      <a class="article-tag-list-link color3">置顶</a>
-    </div>
-    
-    
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">reverse</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-    
-
-    
-    <p class="article-more-link">
-      <a class="article-more-a" href="/2021/06/06/buu-re-%E5%88%B7%E9%A2%98/">展开全文 >></a>
-    </p>
-    
-
-    
-    <div class="clearfix"></div>
-  </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="bugku-S1赛季排位赛" class="article article-type-bugku  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-  
-  
-    <h1 itemprop="name">
-	
-	  <a class="article-title" href="/2021/06/05/S1%E8%B5%9B%E5%AD%A3%E6%8E%92%E4%BD%8D%E8%B5%9B/" target="_blank">S1赛季排位赛</a>
-  
-    </h1>
-  
-
-
-  
-  
-<a href="/2021/06/05/S1%E8%B5%9B%E5%AD%A3%E6%8E%92%E4%BD%8D%E8%B5%9B/" class="archive-article-date">
-        <time datetime="2021-06-05T08:47:10.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-06-05</time>
-</a>
-
-  
-  
-    
-
-  
-  </header>
-  
-  <div class="article-entry" itemprop="articleBody">
-    
-    <h2 id="Bugku-S1-AWD排位赛-16"><a href="#Bugku-S1-AWD排位赛-16" class="headerlink" title="Bugku S1 AWD排位赛-16"></a>Bugku S1 AWD排位赛-16</h2><p>周六参加完hackingclub，赶着7点回来跟着大家第一次打AWD，果然被打得很惨耶哈哈哈，好不容易连上去了，pwn只有一道，栈溢出加fmt，我这刚调完偏移，R1nd0师傅就修好了（急死人了</p>
-<p>最后也没打到别人，现在还不知道该用什么IP端口去连😢</p>
-<p>感觉比CTF刺激多了，特别是看着分一直掉（X，全程80分钟一下就过去了，最后排名垫底，但是莫名好开心（bushi</p>
-    
-    <a class="article-more-a" href="/2021/06/05/S1%E8%B5%9B%E5%AD%A3%E6%8E%92%E4%BD%8D%E8%B5%9B/#more">more >></a>
-    
-    
-
-    
-
-    
-
-  </div>
-  <div class="article-info article-info-index">
-    
-    <div class="article-pop-out tagcloud">
-      <i class="icon-tuding"></i>
-      <a class="article-tag-list-link color3">置顶</a>
-    </div>
-    
-    
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">pwn</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-    
-
-    
-    <p class="article-more-link">
-      <a class="article-more-a" href="/2021/06/05/S1%E8%B5%9B%E5%AD%A3%E6%8E%92%E4%BD%8D%E8%B5%9B/">展开全文 >></a>
-    </p>
-    
-
-    
-    <div class="clearfix"></div>
-  </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-iscc2021" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-  
-  
-    <h1 itemprop="name">
-	
-	  <a class="article-title" href="/2021/05/26/iscc2021/" target="_blank">iscc2021</a>
-  
-    </h1>
-  
-
-
-  
-  
-<a href="/2021/05/26/iscc2021/" class="archive-article-date">
-        <time datetime="2021-05-26T08:45:26.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-05-26</time>
-</a>
-
-  
-  
-    
-
-  
-  </header>
-  
-  <div class="article-entry" itemprop="articleBody">
-    
-    <p>pycc</p>
-<p>好多比赛，抽空打打baby pwn</p>
-    
-    <a class="article-more-a" href="/2021/05/26/iscc2021/#more">more >></a>
-    
     
 
     
@@ -450,200 +264,11 @@
   <div class="article-info article-info-index">
     
     
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">pwn</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
     
 
     
     <p class="article-more-link">
-      <a class="article-more-a" href="/2021/05/26/iscc2021/">展开全文 >></a>
-    </p>
-    
-
-    
-    <div class="clearfix"></div>
-  </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-tonight" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-  
-  
-    <h1 itemprop="name">
-	
-	  <a class="article-title" href="/2021/04/21/tonight/" target="_blank">tonight</a>
-  
-    </h1>
-  
-
-
-  
-  
-<a href="/2021/04/21/tonight/" class="archive-article-date">
-        <time datetime="2021-04-21T12:15:47.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-04-21</time>
-</a>
-
-  
-  
-    
-
-  
-  </header>
-  
-  <div class="article-entry" itemprop="articleBody">
-    
-    <p>划水随记</p>
-    
-    <a class="article-more-a" href="/2021/04/21/tonight/#more">more >></a>
-    
-    
-
-    
-
-    
-
-  </div>
-  <div class="article-info article-info-index">
-    
-    
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">others</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-    
-
-    
-    <p class="article-more-link">
-      <a class="article-more-a" href="/2021/04/21/tonight/">展开全文 >></a>
-    </p>
-    
-
-    
-    <div class="clearfix"></div>
-  </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-hws2020" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-  
-  
-    <h1 itemprop="name">
-	
-	  <a class="article-title" href="/2021/02/05/hws2020/" target="_blank">hws2020</a>
-  
-    </h1>
-  
-
-
-  
-  
-<a href="/2021/02/05/hws2020/" class="archive-article-date">
-        <time datetime="2021-02-05T03:58:59.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-02-05</time>
-</a>
-
-  
-  
-    
-
-  
-  </header>
-  
-  <div class="article-entry" itemprop="articleBody">
-    
-    <h1 id="hws冬令营选拔赛复现"><a href="#hws冬令营选拔赛复现" class="headerlink" title="hws冬令营选拔赛复现"></a>hws冬令营选拔赛复现</h1><p>拖延半年</p>
-<h2 id="pwn"><a href="#pwn" class="headerlink" title="pwn"></a>pwn</h2><h3 id="emarm"><a href="#emarm" class="headerlink" title="emarm"></a>emarm</h3><h5 id="sc"><a href="#sc" class="headerlink" title="sc"></a>sc</h5><p>一次任意地址写，先把fread@got改写为main中一个从<code>read(0, v15, 8uLL);</code>开始的地址，实现多次任意写</p>
-<p>向data段写sc，再改写fread@got为data地址，执行到<code>fread(v12, size, 1uLL, stream);</code>触发</p>
-    
-    <a class="article-more-a" href="/2021/02/05/hws2020/#more">more >></a>
-    
-    
-
-    
-
-    
-
-  </div>
-  <div class="article-info article-info-index">
-    
-    
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">pwn</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-    
-
-    
-    <p class="article-more-link">
-      <a class="article-more-a" href="/2021/02/05/hws2020/">展开全文 >></a>
+      <a class="article-more-a" href="/2021/07/20/web/">展开全文 >></a>
     </p>
     
 
@@ -821,18 +446,6 @@
             <input type="checkbox" q-on="click:toggleTag(e)" q-attr="checked:showTags">
           </label>
           <ul class="article-tag-list" q-show="showTags">
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">pwn</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">others</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">reverse</a>
-              </li>
             
             <div class="clearfix"></div>
           </ul>
