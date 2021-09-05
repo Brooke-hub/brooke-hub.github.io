@@ -6,7 +6,7 @@
   <link href="https://brooke-hub.github.io/atom.xml" rel="self"/>
   
   <link href="https://brooke-hub.github.io/"/>
-  <updated>2021-07-20T08:16:53.062Z</updated>
+  <updated>2021-09-05T00:58:34.644Z</updated>
   <id>https://brooke-hub.github.io/</id>
   
   <author>
@@ -17,23 +17,17 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>web</title>
-    <link href="https://brooke-hub.github.io/2021/07/20/web/"/>
-    <id>https://brooke-hub.github.io/2021/07/20/web/</id>
-    <published>2021-07-20T07:56:02.000Z</published>
-    <updated>2021-07-20T08:16:53.062Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="极客大挑战-2019-PHP"><a href="#极客大挑战-2019-PHP" class="headerlink" title="[极客大挑战 2019]PHP"></a>[极客大挑战 2019]PHP</h2><p>提示备份</p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> requests</span><br><span class="line"></span><br><span class="line">url=<span class="string">&quot;http://52e48dc3-8a00-41f2-a884-3aa622f564ae.node4.buuoj.cn&quot;</span></span><br><span class="line"></span><br><span class="line">li1 = [<span class="string">&#x27;web&#x27;</span>, <span class="string">&#x27;website&#x27;</span>, <span class="string">&#x27;backup&#x27;</span>, <span class="string">&#x27;back&#x27;</span>, <span class="string">&#x27;www&#x27;</span>, <span class="string">&#x27;wwwroot&#x27;</span>, <span class="string">&#x27;temp&#x27;</span>]</span><br><span class="line">li2 = [<span class="string">&#x27;tar&#x27;</span>, <span class="string">&#x27;tar.gz&#x27;</span>, <span class="string">&#x27;zip&#x27;</span>, <span class="string">&#x27;rar&#x27;</span>]</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> li1:</span><br><span class="line">    <span class="keyword">for</span> j <span class="keyword">in</span> li2:</span><br><span class="line">        url_final=url+<span class="string">&quot;/&quot;</span>+i+<span class="string">&quot;.&quot;</span>+j</span><br><span class="line">        print(url_final)</span><br><span class="line">        r=requests.get(url_final)</span><br><span class="line">        print(r)</span><br><span class="line"></span><br></pre></td></tr></table></figure><p><img src="/2021/07/20/web/image-20210720155715016.png" alt="image-20210720155715016"></p><p>代码审计</p><p>从get获取数值，反序列化后</p><p><img src="/2021/07/20/web/image-20210720161542693.png" alt="image-20210720161542693"></p>]]></content>
-    
-    
-      
-      
-    <summary type="html">&lt;h2 id=&quot;极客大挑战-2019-PHP&quot;&gt;&lt;a href=&quot;#极客大挑战-2019-PHP&quot; class=&quot;headerlink&quot; title=&quot;[极客大挑战 2019]PHP&quot;&gt;&lt;/a&gt;[极客大挑战 2019]PHP&lt;/h2&gt;&lt;p&gt;提示备份&lt;/p&gt;
-&lt;figure cla</summary>
-      
+    <title>2021祥云杯pwn_wp</title>
+    <link href="https://brooke-hub.github.io/2021/09/05/2021%E7%A5%A5%E4%BA%91%E6%9D%AFpwn-wp/"/>
+    <id>https://brooke-hub.github.io/2021/09/05/2021%E7%A5%A5%E4%BA%91%E6%9D%AFpwn-wp/</id>
+    <published>2021-09-05T00:58:21.000Z</published>
+    <updated>2021-09-05T00:58:34.644Z</updated>
     
     
     
+    
+    
+    <category term="pwn" scheme="https://brooke-hub.github.io/tags/pwn/"/>
     
   </entry>
   
