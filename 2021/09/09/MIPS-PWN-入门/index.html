@@ -91,6 +91,8 @@
   </div><div class="post-content"><blockquote>
 <p>整理一下mips</p>
 </blockquote>
+<span id="more"></span>
+
 <h2 id="工具"><a href="#工具" class="headerlink" title="工具"></a>工具</h2><p>mipsrop</p>
 <h2 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h2><h3 id="Mplogin"><a href="#Mplogin" class="headerlink" title="Mplogin"></a>Mplogin</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash">file Mplogin</span> </span><br><span class="line">Mplogin: ELF 32-bit LSB executable, MIPS, MIPS32 version 1 (SYSV), dynamically linked, interpreter /lib/ld-uClibc.so.0, stripped</span><br><span class="line"></span><br><span class="line"><span class="meta">$</span><span class="bash">checksec Mplogin</span></span><br><span class="line">[*] &#x27;/home/wendy/Desktop/mips/Mplogin/Mplogin&#x27;</span><br><span class="line">    Arch:     mips-32-little</span><br><span class="line">    RELRO:    No RELRO</span><br><span class="line">    Stack:    No canary found</span><br><span class="line">    NX:       NX disabled</span><br><span class="line">    PIE:      No PIE (0x400000)</span><br><span class="line">    RWX:      Has RWX segments</span><br></pre></td></tr></table></figure>
 
